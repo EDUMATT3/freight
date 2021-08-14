@@ -9,6 +9,16 @@ package br.com.edumatt3;
 
 service FreightService {
   rpc send (FreightRequest) returns (FreightReply) {}
+  rpc calculateFreight(CalculateFreightRequest) returns (CalculateFreightResponse){}
+}
+
+message CalculateFreightRequest {
+  string zipcode = 1;
+}
+
+message CalculateFreightResponse {
+  double value = 1;
+  string zipcode = 2;
 }
 
 message FreightRequest {
