@@ -12,6 +12,11 @@ service FreightService {
   rpc calculateFreight(CalculateFreightRequest) returns (CalculateFreightResponse){}
 }
 
+message ErrorDetails {
+  int32 code = 1;
+  string message = 2;
+}
+
 message CalculateFreightRequest {
   string zipcode = 1;
 }
